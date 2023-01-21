@@ -1,0 +1,14 @@
+//for low level basics such as resets and styles for html and body element
+
+@use '../abstracts' as a;
+
+html{
+   font-size: 62.5%;
+}
+
+body{
+   font-size: 1.6rem;
+   font-family: a.$ff-barlow-condensed;
+   background-color: a.$clr-white;
+   color: a.$clr-black;
+}

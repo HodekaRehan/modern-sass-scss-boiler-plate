@@ -1,0 +1,9 @@
+.home{
+   padding: 2.4rem 1.6rem;
+
+   .para{
+      &:not(:last-child){
+         margin-bottom: 1.6rem;
+      }
+   }
+}
