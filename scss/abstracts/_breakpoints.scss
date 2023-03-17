@@ -1,23 +1,93 @@
-$breakpoints-up: (
-   "medium": 48em, //768px and up
-   "large": 64em, //1024px and up
-   "xlarge": 90em //1440px and up
+$breakpoints: (
+   "xs": 0,
+   "sm": 30em, //480px
+   "md": 45em, //720px
+   "lg": 60em, //960px
+   "xl": 75em, //1200px
+   "xxl": 90em, //1440px
 );
 
-$breakpoints-down: (
-   "small": 47.9375em, //767px and down
-   "medium": 63.9375em, //1023px and down
-   "large": 83.6875em //1339px and down
-);
-
-@mixin breakpoint-up($size) {
-   @media (min-width: map-get($breakpoints-up, $size)) {
-      @content;
+@mixin xs {
+   @media (min-width: map-get($breakpoints, "xs")) {    //its likes saying, look into breakpoints map and get "xs" breakpoint
+      @content; 
    }
 }
 
-@mixin breakpoint-down($size) {
-   @media (max-width: map-get($breakpoints-down, $size)) {
-      @content;
+@mixin sm {
+   @media (min-width: map-get($breakpoints, "sm")) {    
+      @content; 
    }
 }
+
+@mixin md {
+   @media (min-width: map-get($breakpoints, "md")) {    
+      @content; 
+   }
+}
+
+@mixin lg {
+   @media (min-width: map-get($breakpoints, "lg")) {    
+      @content; 
+   }
+}
+
+@mixin xl {
+   @media (min-width: map-get($breakpoints, "xl")) {    
+      @content; 
+   }
+}
+
+@mixin xxl {
+   @media (min-width: map-get($breakpoints, "xxl")) {    
+      @content; 
+   }
+}
+
+
+//------------------ FLEXIBLE BREAKPOINT ----------------------//
+//if we want to apply styles at a specific screen width and that screen width is not covered by the above breakpoints, we can use this flexible mixin
+
+@mixin breakpoint($bp: 0) { // default value: 0 (if we dont pass any value for the breakpoint it will default to 0)
+   @media (min-width: $bp) {    
+      @content; 
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//alternate option
+
+// $breakpoints-up: (
+//    "medium": 48em, //768px and up
+//    "large": 64em, //1024px and up
+//    "xlarge": 90em //1440px and up
+// );
+
+// $breakpoints-down: (
+//    "small": 47.9375em, //767px and down
+//    "medium": 63.9375em, //1023px and down
+//    "large": 83.6875em //1339px and down
+// );
+
+// @mixin breakpoint-up($size) {
+//    @media (min-width: map-get($breakpoints-up, $size)) {
+//       @content;
+//    }
+// }
+
+// @mixin breakpoint-down($size) {
+//    @media (max-width: map-get($breakpoints-down, $size)) {
+//       @content;
+//    }
+// }
